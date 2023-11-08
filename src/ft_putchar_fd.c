@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 10:34:34 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/06 10:34:39 by ledelbec         ###   ########.fr       */
+/*   Created: 2023/11/08 16:29:56 by ledelbec          #+#    #+#             */
+/*   Updated: 2023/11/08 16:30:41 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-int	ft_isprint(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	return (c >= 32 && c <= 126);
+	write(fd, &c, 1);
 }

@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 10:34:34 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/06 10:34:39 by ledelbec         ###   ########.fr       */
+/*   Created: 2023/11/06 15:17:58 by ledelbec          #+#    #+#             */
+/*   Updated: 2023/11/07 11:11:02 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-int	ft_isprint(int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	return (c >= 32 && c <= 126);
+	size_t		i;
+	const char	*cs;
+
+	cs = s;
+	i = 0;
+	while (i < n)
+	{
+		if (cs[i] == c)
+			return ((void *)s + i);
+		i++;
+	}
+	return (NULL);
 }

@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 10:34:34 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/06 10:34:39 by ledelbec         ###   ########.fr       */
+/*   Created: 2023/11/08 16:05:30 by ledelbec          #+#    #+#             */
+/*   Updated: 2023/11/08 16:19:54 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int	ft_isprint(int c)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	return (c >= 32 && c <= 126);
+	char	*dup;
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen(s);
+	dup = malloc(len + 1);
+	if (!dup)
+		return (NULL);
+	dup[len] = 0;
+	i = 0;
+	while (i < len)
+	{
+		dup[i] = f(i, s[i]);
+		i++;
+	}
+	return (dup);
 }

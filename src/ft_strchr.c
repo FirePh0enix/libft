@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 10:34:34 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/06 10:34:39 by ledelbec         ###   ########.fr       */
+/*   Created: 2023/11/06 13:23:15 by ledelbec          #+#    #+#             */
+/*   Updated: 2023/11/06 16:08:39 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-int	ft_isprint(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	return (c >= 32 && c <= 126);
+	while (1)
+	{
+		if (*s == c)
+			return ((char *)s);
+		if (!*s)
+			break ;
+		s++;
+	}
+	return (NULL);
 }

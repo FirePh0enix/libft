@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 10:34:34 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/06 10:34:39 by ledelbec         ###   ########.fr       */
+/*   Created: 2023/11/08 14:07:17 by ledelbec          #+#    #+#             */
+/*   Updated: 2023/11/08 14:29:55 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int	ft_isprint(int c)
+char	*ft_strdup(const char *s)
 {
-	return (c >= 32 && c <= 126);
+	char	*dup;
+
+	dup = malloc(ft_strlen(s) + 1);
+	if (!dup)
+		return (NULL);
+	ft_memcpy(dup, s, ft_strlen(s) + 1);
+	return (dup);
 }
