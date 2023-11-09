@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/08 16:33:18 by ledelbec         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:23:28 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -43,7 +44,7 @@ int		ft_atoi(const char *s);
 
 void	*ft_calloc(size_t n, size_t size);
 
-char	*ft_substr(const char *s, unsigned int start, unsigned int len);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	**ft_split(const char *s, char c);

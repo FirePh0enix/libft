@@ -6,14 +6,14 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:25:27 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/08 15:50:57 by ledelbec         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:32:54 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strrev(char *s, int len)
+static char	*ft_strrev(char *s, int len)
 {
 	int		i;
 	char	c;
@@ -29,21 +29,42 @@ char	*ft_strrev(char *s, int len)
 	return (s);
 }
 
+static int	str_size(int n)
+{
+	int				len;
+	unsigned int	un;
+
+	len = 1;
+	un = n;
+	if (n < 0)
+	{
+		un = -n;
+		len++;
+	}
+	while (un > 0)
+	{
+		len++;
+		un /= 10;
+	}
+	return (len);
+}
+
 char	*ft_itoa(int n)
 {
 	char			*s;
 	unsigned int	un;
 	int				i;
+	const int		len = str_size(n) + 1;
 
-	s = malloc(12);
+	s = malloc(len);
 	if (!s)
 		return (NULL);
-	ft_bzero(s, 12);
+	ft_bzero(s, len);
 	un = n;
 	if (n < 0)
 		un = -n;
 	else if (n == 0)
-		ft_memcpy(s, "0", 2);
+		s[0] = '0';
 	i = 0;
 	while (un > 0)
 	{

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 15:17:58 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/09 12:36:14 by ledelbec         ###   ########.fr       */
+/*   Created: 2023/11/09 13:40:05 by ledelbec          #+#    #+#             */
+/*   Updated: 2023/11/09 15:24:09 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+#include "libft_bonus.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	size_t		i;
-	const char	*cs = s;
+	int	len;
 
-	i = 0;
-	while (i < n)
+	len = 0;
+	while (lst)
 	{
-		if (cs[i] == c)
-			return ((void *)s + i);
-		i++;
+		len++;
+		lst = lst->next;
 	}
-	return (NULL);
+	return (len);
 }

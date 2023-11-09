@@ -6,12 +6,11 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2023/11/08 17:19:58 by ledelbec         ###   ########.fr        #
+#    Updated: 2023/11/09 16:04:33 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES=\
-	ft_alnum.c \
 	ft_bzero.c \
 	ft_isalpha.c \
 	ft_isascii.c \
@@ -46,15 +45,21 @@ SOURCES=\
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c \
+
+BONUS_SOURCES=\
+	ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c
 
 OBJECTS=$(SOURCES:.c=.o)
 NAME=libft.a
-
-TEST_SOURCES=\
-	test/main.c \
-	test/test_toupper.c \
-	test/test_strnstr.c
 
 CC=clang
 CFLAGS=-I. -Wall -Wextra -Werror
@@ -62,6 +67,9 @@ CFLAGS=-I. -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
+	ar r $(NAME) $(OBJECTS)
+
+bonus: $(OBJECTS) $(BONUS_OBJECTS)
 	ar r $(NAME) $(OBJECTS)
 
 clean:

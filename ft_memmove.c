@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:33:57 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/06 13:15:52 by ledelbec         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:37:32 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char		*cdst;
-	const char	*csrc;
+	const char	*csrc = src;
 	size_t		i;
 
 	cdst = dest;
-	csrc = src;
 	i = 0;
 	while (i < n)
 	{

@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 15:17:58 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/09 12:36:14 by ledelbec         ###   ########.fr       */
+/*   Created: 2023/11/09 14:59:03 by ledelbec          #+#    #+#             */
+/*   Updated: 2023/11/09 15:23:59 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+#include "libft_bonus.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t		i;
-	const char	*cs = s;
+	t_list	*dup;
+	t_list	*cur;
 
-	i = 0;
-	while (i < n)
+	dup = NULL;
+	while (lst)
 	{
-		if (cs[i] == c)
-			return ((void *)s + i);
-		i++;
+		cur = ft_lstnew(f(lst->content));
+		if (!cur)
+		{
+			ft_lstclear(&dup, del);
+			return (NULL);
+		}
+		if (dup == NULL)
+			dup = cur;
+		lst = lst->next;
 	}
-	return (NULL);
+	return (dup);
 }
