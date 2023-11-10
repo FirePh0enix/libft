@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:51:08 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/08 16:28:07 by ledelbec         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:41:24 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,11 @@ char	**ft_split(const char *s, char c)
 	size_t	i;
 	size_t	k;
 
-	res = malloc(sizeof(char *) * (count_sep(s, c) + 2));
+	if (!s)
+		return (NULL);
+	res = ft_calloc(sizeof(char *), (count_sep(s, c) + 2));
 	if (!res)
 		return (NULL);
-	ft_bzero(res, sizeof(char *) * (count_sep(s, c) + 2));
 	len = 0;
 	i = 0;
 	while (i < ft_strlen(s))
@@ -73,11 +74,10 @@ char	**ft_split(const char *s, char c)
 		k = offset_until_sep(s, i, c);
 		if (k > i)
 		{
-			res[len] = malloc(k - i + 1);
+			res[len] = ft_calloc(1, k - i + 1);
 			if (!res[len])
 				return (error(res));
-			ft_memcpy(res[len], s + i, k - i);
-			res[len++][k - i] = '\0';
+			ft_memcpy(res[len++], s + i, k - i);
 		}
 		i = k + 1;
 	}
