@@ -6,11 +6,11 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:41:59 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/16 13:10:22 by ledelbec         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:13:08 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
