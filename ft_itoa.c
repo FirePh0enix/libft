@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:25:27 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/09 14:32:54 by ledelbec         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:41:55 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@
 static char	*ft_strrev(char *s, int len)
 {
 	int		i;
+	int		j;
 	char	c;
 
 	i = 0;
-	while (i < (len + 1) / 2)
+	j = len - 1;
+	while (i < j)
 	{
 		c = s[i];
-		s[i] = s[len - i];
-		s[len - i] = c;
+		s[i] = s[j];
+		s[j] = c;
 		i++;
+		j--;
 	}
 	return (s);
 }
@@ -34,8 +37,10 @@ static int	str_size(int n)
 	int				len;
 	unsigned int	un;
 
-	len = 1;
+	len = 0;
 	un = n;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
 		un = -n;
@@ -56,10 +61,9 @@ char	*ft_itoa(int n)
 	int				i;
 	const int		len = str_size(n) + 1;
 
-	s = malloc(len);
+	s = ft_calloc(len, 1);
 	if (!s)
 		return (NULL);
-	ft_bzero(s, len);
 	un = n;
 	if (n < 0)
 		un = -n;
@@ -73,6 +77,6 @@ char	*ft_itoa(int n)
 	}
 	if (n < 0)
 		s[i++] = '-';
-	ft_strrev(s, i - 1);
+	ft_strrev(s, i);
 	return (s);
 }

@@ -2,3 +2,6 @@
 *.a
 .vscode
 test.1
+
+libftTester
+libft-tester

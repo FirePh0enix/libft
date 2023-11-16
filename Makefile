@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2023/11/09 16:04:33 by ledelbec         ###   ########.fr        #
+#    Updated: 2023/11/16 13:44:21 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,10 +59,11 @@ BONUS_SOURCES=\
 	ft_lstmap.c
 
 OBJECTS=$(SOURCES:.c=.o)
+BONUS_OBJECTS=$(BONUS_SOURCES:.c=.o)
 NAME=libft.a
 
 CC=clang
-CFLAGS=-I. -Wall -Wextra -Werror
+CFLAGS=-I. -Wall -Wextra -Werror -g3
 
 all: $(NAME)
 
@@ -70,10 +71,10 @@ $(NAME): $(OBJECTS)
 	ar r $(NAME) $(OBJECTS)
 
 bonus: $(OBJECTS) $(BONUS_OBJECTS)
-	ar r $(NAME) $(OBJECTS)
+	ar r $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(BONUS_OBJECTS)
 
 fclean: clean
 	rm -f $(NAME)

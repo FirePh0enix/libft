@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:41:59 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/07 11:07:46 by ledelbec         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:10:22 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
-	size_t	big_len;
 	size_t	little_len;
 	size_t	index;
 
 	if (*little == 0)
 		return ((char *)big);
 	index = 0;
-	big_len = ft_strlen(big);
 	little_len = ft_strlen(little);
-	while (big[index] && index < big_len - little_len + 1 && index < n)
+	while (big[index] && index < n && index < n - little_len + 1)
 	{
 		if (ft_strncmp(big + index, little, little_len) == 0)
 			return ((char *)big + index);
