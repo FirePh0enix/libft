@@ -12,8 +12,8 @@
 
 int	ft_atoi(const char *s)
 {
-	int	sign;
-	int	value;
+	int		sign;
+	long	value;
 
 	while (*s == ' ' || *s == '\n' || *s == '\t'
 		|| *s == '\f' || *s == '\v' || *s == '\r')
