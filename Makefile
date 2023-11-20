@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2023/11/20 11:20:49 by ledelbec         ###   ########.fr        #
+#    Updated: 2023/11/20 11:34:37 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,10 +72,6 @@ $(NAME): $(OBJECTS)
 
 bonus: $(OBJECTS) $(BONUS_OBJECTS)
 	ar r $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
-
-so: $(OBJECTS) $(BONUS_OBJECTS)
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(OBJECTS) $(BONUS_OBJECTS)
-	cc -nostartfiles -shared -o libft.so $(OBJECTS) $(BONUS_OBJECTS)
 
 clean:
 	rm -f $(OBJECTS) $(BONUS_OBJECTS)

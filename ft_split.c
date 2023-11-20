@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:51:08 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/16 14:01:01 by ledelbec         ###   ########.fr       */
+/*   Updated: 2023/11/20 11:33:31 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-static int	count_sep(const char *str, char c)
+static int	count_words(const char *str, char c)
 {
 	int	count;
 	int	i;
@@ -69,7 +69,7 @@ char	**ft_split(const char *s, char c)
 
 	if (!s)
 		return (NULL);
-	res = ft_calloc(sizeof(char *), (count_sep(s, c) + 1));
+	res = ft_calloc(sizeof(char *), (count_words(s, c) + 1));
 	if (!res)
 		return (NULL);
 	len = 0;
