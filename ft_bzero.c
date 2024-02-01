@@ -6,22 +6,26 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:35:16 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/06 10:35:18 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/01/07 19:02:09 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdint.h>
 
 void	ft_bzero(void *p, size_t n)
 {
-	char	*s;
 	size_t	i;
 
-	s = p;
 	i = 0;
+	while (n - i >= 8)
+	{
+		*((uint64_t *)(p + i)) = 0;
+		i += 8;
+	}
 	while (i < n)
 	{
-		s[i] = '\0';
+		*((char *)p) = 0;
 		i++;
 	}
 }

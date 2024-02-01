@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 14:04:11 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/20 11:21:27 by ledelbec         ###   ########.fr       */
+/*   Created: 2023/11/13 14:36:12 by ledelbec          #+#    #+#             */
+/*   Updated: 2024/02/01 20:19:56 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int	isflag(char c)
 {
-	t_list	*last;
+	return (c == 'd' || c == 'i' || c == 'x' || c == 'X' || c == 'c'
+		|| c == 's' || c == '%' || c == 'p' || c == 'u');
+}
 
-	if (!lst || !new)
-		return ;
-	if (*lst == NULL)
-		*lst = new;
-	else
+int	printf_atoi(char **s)
+{
+	int	value;
+
+	value = 0;
+	while (**s >= '0' && **s <= '9')
 	{
-		last = ft_lstlast(*lst);
-		last->next = new;
+		value = value * 10 + (**s - '0');
+		*s += 1;
 	}
+	*s -= 1;
+	return (value);
 }

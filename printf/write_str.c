@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   write_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 14:39:11 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/20 11:21:16 by ledelbec         ###   ########.fr       */
+/*   Created: 2023/11/13 15:50:01 by ledelbec          #+#    #+#             */
+/*   Updated: 2023/11/27 11:41:54 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+int	write_str(char *s)
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
+	int	len;
+
+	if (s == NULL)
+		return (write(1, "(null)", 6));
+	len = 0;
+	while (s[len])
+		len++;
+	return (write(1, s, len));
+}
+
+int	write_chr(char c)
+{
+	return (write(1, &c, 1));
 }

@@ -6,24 +6,28 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:34:05 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/09 12:37:23 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/01/07 19:00:42 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdint.h>
+#include <xmmintrin.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t		i;
-	char		*sdest;
-	const char	*ssrc = src;
+	size_t	i;
 
-	sdest = dest;
 	i = 0;
+	while (n - i >= 8)
+	{
+		*((uint64_t *)(dest + i)) = *((uint64_t *)(src + i));
+		i += 8;
+	}
 	while (i < n)
 	{
-		sdest[i] = ssrc[i];
+		*((uint8_t *)(dest + i)) = *((uint8_t *)(dest + i));
 		i++;
 	}
-	return (sdest);
+	return (dest);
 }

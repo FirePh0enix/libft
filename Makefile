@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2023/11/20 11:34:37 by ledelbec         ###   ########.fr        #
+#    Updated: 2024/01/07 18:44:21 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,29 +46,28 @@ SOURCES=\
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
-
-BONUS_SOURCES=\
-	ft_lstnew.c \
-	ft_lstadd_front.c \
-	ft_lstsize.c \
-	ft_lstlast.c \
-	ft_lstadd_back.c \
-	ft_lstdelone.c \
-	ft_lstclear.c \
-	ft_lstiter.c \
-	ft_lstmap.c
+	\
+	printf/ft_printf.c \
+	printf/pad.c \
+	printf/util.c \
+	printf/write_int.c \
+	printf/write_str.c
 
 OBJECTS=$(SOURCES:.c=.o)
 BONUS_OBJECTS=$(BONUS_SOURCES:.c=.o)
 NAME=libft.a
 
 CC=clang
-CFLAGS=-I. -Wall -Wextra -Werror -g3
+CFLAGS=-I. -Wall -Wextra -Werror -g3 -fPIE
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	ar r $(NAME) $(OBJECTS)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SOURCES)
+	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
 
 bonus: $(OBJECTS) $(BONUS_OBJECTS)
 	ar r $(NAME) $(OBJECTS) $(BONUS_OBJECTS)

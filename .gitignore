@@ -1,7 +1,6 @@
 *.o
-*.a
-.vscode
-test.1
+libft.a
+libft.so
 
-libftTester
-libft-tester
+compile_flags.txt
+libft-unit-tester
