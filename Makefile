@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2024/02/01 23:19:41 by ledelbec         ###   ########.fr        #
+#    Updated: 2024/02/01 23:24:34 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,8 @@ SOURCES=\
 	printf/write_int.c \
 	printf/write_str.c \
 	\
-	ft_vector.c
+	ft_vector.c \
+	ft_vector_utils.c
 
 OBJECTS=$(SOURCES:.c=.o)
 BONUS_OBJECTS=$(BONUS_SOURCES:.c=.o)

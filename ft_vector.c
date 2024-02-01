@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 22:57:13 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/01 23:12:11 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/02/01 23:24:21 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ void	*ft_vector(unsigned int el_size, unsigned int capacity)
 	data->capacity = capacity;
 	data->size = 0;
 	return (data + 1);
-}
-
-void	ft_vector_free(void *vec)
-{
-	free(vec - sizeof(t_vecdata));
 }
 
 void	ft_vector_add(void *_vec, void *elp)
@@ -73,9 +68,4 @@ void	ft_vector_del_swap(void *_vec, unsigned int index)
 		*vec + (vec_data->size - 1) * vec_data->el_size,
 		vec_data->el_size);
 	vec_data->size--;
-}
-
-t_size	ft_vector_size(void *vec)
-{
-	return (((t_vecdata *)vec)->size);
 }

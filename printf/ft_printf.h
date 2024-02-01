@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 10:59:36 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/01 20:15:16 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/02/01 23:22:31 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <stdarg.h>
 
-typedef struct s_fmt {
+typedef struct s_fmt
+{
 	int	prefix;
 	int	sign;
 	int	space;

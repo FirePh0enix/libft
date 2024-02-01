@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_vector_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 22:43:57 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/01 23:22:53 by ledelbec         ###   ########.fr       */
+/*   Created: 2024/02/01 23:23:51 by ledelbec          #+#    #+#             */
+/*   Updated: 2024/02/01 23:24:16 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
+#include "libft.h"
+
+t_size	ft_vector_size(void *vec)
 {
-	while (*s1 != '\0' && *s2 != '\0' && *s1 != *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
+	return (((t_vecdata *)vec)->size);
+}
+
+void	ft_vector_free(void *vec)
+{
+	free(vec - sizeof(t_vecdata));
 }

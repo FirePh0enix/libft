@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 22:34:16 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/01 22:39:25 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/02/01 23:21:58 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ void	*ft_realloc(void *p, size_t n)
 	}
 	return (np);
 }
-
