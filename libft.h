@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/01 23:16:44 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/02/08 00:35:05 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <stdarg.h>
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
@@ -58,7 +59,12 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int nb, int fd);
 
+/*
+ * Printf functions
+ */
+
 int			ft_printf(const char *fmt, ...);
+int			ft_sprintf(char *buf, const char *fmt, ...);
 
 /*
  * C++ like vector library.
@@ -66,14 +72,12 @@ int			ft_printf(const char *fmt, ...);
 
 typedef struct s_vecdata
 {
-	unsigned int	size;
-	unsigned int	capacity;
-	unsigned int	el_size;
+	size_t	size;
+	size_t	capacity;
+	size_t	el_size;
 }	t_vecdata;
 
-typedef unsigned int	t_size;
-
-void		*ft_vector(unsigned int el_size, unsigned int capacity);
+void		*ft_vector(size_t el_size, size_t capacity);
 /*
  * Free the memory used by the vector. `vec` should be the vector itself.
  */
@@ -89,12 +93,18 @@ void		ft_vector_add(void *vec, void *elp);
  * Delete the element at `index`. After deletion the order of the remaining
  * elements is preserved.
  */
-void		ft_vector_del(void *vec, unsigned int index);
+void		ft_vector_del(void *vec, size_t index);
 /*
  * Delete the element at `index`. A less costly version of ft_vector_del but it
  * does not preserve the order of elements.
  */
-void		ft_vector_del_swap(void *vec, unsigned int index);
-t_size		ft_vector_size(void *vec);
+void		ft_vector_del_swap(void *vec, size_t index);
+size_t		ft_vector_size(void *vec);
+/*
+ * Apply the function `f` on all elements of the vector.
+ */
+void		ft_vector_iter(void *vec, void (*f)(void*));
+
+t_vecdata	*ft_vector_data(void *vec);
 
 #endif

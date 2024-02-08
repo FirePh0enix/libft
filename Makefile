@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2024/02/01 23:24:34 by ledelbec         ###   ########.fr        #
+#    Updated: 2024/02/08 01:15:45 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,14 +47,13 @@ SOURCES=\
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 	\
-	printf/ft_printf.c \
-	printf/pad.c \
-	printf/util.c \
-	printf/write_int.c \
-	printf/write_str.c \
-	\
 	ft_vector.c \
-	ft_vector_utils.c
+	ft_vector_utils.c \
+	\
+	printf/printf.c \
+	printf/format.c \
+	printf/write_ints.c \
+	printf/write_pad.c \
 
 OBJECTS=$(SOURCES:.c=.o)
 BONUS_OBJECTS=$(BONUS_SOURCES:.c=.o)

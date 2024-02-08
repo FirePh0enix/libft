@@ -5,29 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 14:36:12 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/01 20:19:56 by ledelbec         ###   ########.fr       */
+/*   Created: 2024/02/08 00:57:41 by ledelbec          #+#    #+#             */
+/*   Updated: 2024/02/08 01:16:02 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf_int.h"
 
-int	isflag(char c)
+bool	isflag(char c)
 {
-	return (c == 'd' || c == 'i' || c == 'x' || c == 'X' || c == 'c'
+	return (c == 'd' || c == 'i' || c == 'x' || c == 'x' || c == 'c'
 		|| c == 's' || c == '%' || c == 'p' || c == 'u');
-}
-
-int	printf_atoi(char **s)
-{
-	int	value;
-
-	value = 0;
-	while (**s >= '0' && **s <= '9')
-	{
-		value = value * 10 + (**s - '0');
-		*s += 1;
-	}
-	*s -= 1;
-	return (value);
 }
