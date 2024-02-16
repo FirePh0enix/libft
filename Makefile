@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2024/02/08 01:15:45 by ledelbec         ###   ########.fr        #
+#    Updated: 2024/02/16 12:38:30 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ SOURCES=\
 	printf/format.c \
 	printf/write_ints.c \
 	printf/write_pad.c \
+	printf/util.c \
 
 OBJECTS=$(SOURCES:.c=.o)
 BONUS_OBJECTS=$(BONUS_SOURCES:.c=.o)

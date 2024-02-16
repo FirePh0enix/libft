@@ -6,13 +6,13 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 22:57:13 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/01 23:24:21 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/02/16 12:38:55 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_vector(unsigned int el_size, unsigned int capacity)
+void	*ft_vector(size_t el_size, size_t capacity)
 {
 	t_vecdata	*data;
 
@@ -44,7 +44,7 @@ void	ft_vector_add(void *_vec, void *elp)
 	vec_data->size++;
 }
 
-void	ft_vector_del(void *_vec, unsigned int index)
+void	ft_vector_del(void *_vec, size_t index)
 {
 	t_vecdata	*vec_data;
 	void		**vec;
@@ -57,7 +57,7 @@ void	ft_vector_del(void *_vec, unsigned int index)
 	vec_data->size--;
 }
 
-void	ft_vector_del_swap(void *_vec, unsigned int index)
+void	ft_vector_del_swap(void *_vec, size_t index)
 {
 	t_vecdata	*vec_data;
 	void		**vec;
