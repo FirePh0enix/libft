@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2024/02/16 12:38:30 by ledelbec         ###   ########.fr        #
+#    Updated: 2024/02/16 12:58:47 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SOURCES=\
 	ft_strrchr.c \
 	ft_atoi.c \
 	ft_calloc.c \
+	ft_realloc.c \
 	ft_strlcpy.c \
 	ft_strlcat.c \
 	ft_strdup.c \
