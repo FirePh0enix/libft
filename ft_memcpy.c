@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:34:05 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/01/07 19:00:42 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/02/19 13:05:23 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	while (i < n)
 	{
-		*((uint8_t *)(dest + i)) = *((uint8_t *)(dest + i));
+		*((uint8_t *)(dest + i)) = *((uint8_t *)(src + i));
 		i++;
 	}
 	return (dest);
