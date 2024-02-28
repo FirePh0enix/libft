@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2024/02/16 12:58:47 by ledelbec         ###   ########.fr        #
+#    Updated: 2024/02/28 13:17:12 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,8 +57,12 @@ SOURCES=\
 	printf/write_pad.c \
 	printf/util.c \
 
+TEST_SOURCES=\
+	test/test.c \
+	test/sprintf.c
+
 OBJECTS=$(SOURCES:.c=.o)
-BONUS_OBJECTS=$(BONUS_SOURCES:.c=.o)
+TEST_OBJECTS=$(TEST_SOURCES:.c=.o)
 NAME=libft.a
 
 CC=clang
@@ -68,6 +72,12 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	ar r $(NAME) $(OBJECTS)
+
+test.out: $(TEST_OBJECTS) $(NAME)
+	$(CC) -o test.out $(TEST_OBJECTS) libft.a
+
+run-test: test.out
+	./test.out
 
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SOURCES)

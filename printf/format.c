@@ -6,14 +6,15 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:23:52 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/08 01:16:38 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:44:56 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include "printf_int.h"
+#include <stdio.h>
 
-int	handle_str(va_list list, const char **fmt, t_writer w)
+int	handle_str(va_list list, const char **fmt, t_writer *w)
 {
 	char	c;
 	char	*str;
@@ -22,13 +23,13 @@ int	handle_str(va_list list, const char **fmt, t_writer w)
 	{
 		c = va_arg(list, int);
 		*fmt += 1;
-		return (w.write(&w, &c, 1));
+		return (w->write(w, &c, 1));
 	}
 	else if ((*fmt)[0] == 's')
 	{
 		*fmt += 1;
 		str = va_arg(list, char *);
-		return (w.write(&w, str, ft_strlen(str)));
+		return (w->write(w, str, ft_strlen(str)));
 	}
 	return (0);
 }
@@ -47,7 +48,7 @@ static int	_parse_num(const char **fmt)
 	return (i);
 }
 
-int	handle_int(va_list list, const char **fmt, t_writer w)
+int	handle_int(va_list list, const char **fmt, t_writer *w)
 {
 	t_fmt	f;
 	char	*s2;
@@ -71,17 +72,17 @@ int	handle_int(va_list list, const char **fmt, t_writer w)
 		*fmt += 1;
 	}
 	if (!isflag(**fmt))
-		return (w.write(&w, "%", 1) + w.write(&w, s2, (*fmt - s2)));
+		return (w->write(w, "%", 1) + w->write(w, s2, (*fmt - s2)));
 	*fmt += 1;
-	return (handle_number(list, (char *)*fmt, &f, w));
+	return (handle_number(list, (char *)*fmt - 1, &f, w));
 }
 
-int	handle_flags(va_list list, const char **fmt, t_writer w)
+int	handle_flags(va_list list, const char **fmt, t_writer *w)
 {
 	if ((*fmt)[0] == '%' || (*fmt)[0] == '\0')
 	{
 		*fmt += 1;
-		return (w.write(&w, "%", 1));
+		return (w->write(w, "%", 1));
 	}
 	else if ((*fmt)[0] == 'c' || (*fmt)[0] == 's')
 		return (handle_str(list, fmt, w));
@@ -89,7 +90,7 @@ int	handle_flags(va_list list, const char **fmt, t_writer w)
 		return (handle_int(list, fmt, w));
 }
 
-int	format(const char *fmt, va_list list, t_writer w)
+int	format(const char *fmt, va_list list, t_writer *w)
 {
 	int	n;
 
@@ -105,7 +106,7 @@ int	format(const char *fmt, va_list list, t_writer w)
 		}
 		else
 		{
-			n += w.write(&w, fmt, 1);
+			n += w->write(w, fmt, 1);
 			fmt++;
 		}
 	}

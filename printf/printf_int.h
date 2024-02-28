@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:30:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/08 01:17:53 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:40:13 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@ typedef struct s_writer
 	void	*p;
 }	t_writer;
 
-int		write_int(t_fmt *fmt, int64_t i, t_writer writer);
-int		write_uint(t_fmt *fmt, uint64_t i, char *base, t_writer writer);
-int		write_ptr(t_fmt *fmt, uintptr_t ptr, t_writer writer);
+int		write_int(t_fmt *fmt, int64_t i, t_writer *writer);
+int		write_uint(t_fmt *fmt, uint64_t i, char *base, t_writer *writer);
+int		write_ptr(t_fmt *fmt, uintptr_t ptr, t_writer *writer);
 
-int		handle_number(va_list list, char *s, t_fmt *fmt, t_writer writer);
+int		handle_number(va_list list, char *s, t_fmt *fmt, t_writer *writer);
 
-int		write_lpad_sign(t_fmt *fmt, int len, int64_t i, t_writer writer);
-int		write_rpad_sign(t_fmt *fmt, int len, int64_t i, t_writer writer);
-int		write_lpad(t_fmt *fmt, int len, t_writer writer);
-int		write_rpad(t_fmt *fmt, int len, t_writer writer);
+int		write_lpad_sign(t_fmt *fmt, int len, int64_t i, t_writer *writer);
+int		write_rpad_sign(t_fmt *fmt, int len, int64_t i, t_writer *writer);
+int		write_lpad(t_fmt *fmt, int len, t_writer *writer);
+int		write_rpad(t_fmt *fmt, int len, t_writer *writer);
 
-int		format(const char *fmt, va_list list, t_writer writer);
+int		format(const char *fmt, va_list list, t_writer *writer);
 
 bool	isflag(char c);
 

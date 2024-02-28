@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 01:10:07 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/16 12:37:48 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:47:23 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ static int	_printf_write(t_writer *w, const char *s, int len)
 
 int	ft_printf(const char *fmt, ...)
 {
-	int		n;
-	va_list	list;
+	int			n;
+	va_list		list;
+	t_writer	writer;
 
 	va_start(list, fmt);
-	n = format(fmt, list, (t_writer){_printf_write, NULL});
+	writer = (t_writer){_printf_write, NULL};
+	n = format(fmt, list, &writer);
 	va_end(list);
 	return (n);
 }
@@ -40,11 +42,13 @@ static int	_sprintf_write(t_writer *w, const char *s, int len)
 
 int	ft_sprintf(char *buf, const char *fmt, ...)
 {
-	int		n;
-	va_list	list;
+	int			n;
+	va_list		list;
+	t_writer	writer;
 
 	va_start(list, fmt);
-	n = format(fmt, list, (t_writer){_sprintf_write, buf});
+	writer = (t_writer){_sprintf_write, buf};
+	n = format(fmt, list, &writer);
 	va_end(list);
 	return (n);
 }

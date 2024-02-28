@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   sprintf.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 10:35:16 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/28 11:38:26 by ledelbec         ###   ########.fr       */
+/*   Created: 2024/02/28 13:12:25 by ledelbec          #+#    #+#             */
+/*   Updated: 2024/02/28 13:48:58 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
+#include <stdio.h>
 
-void	ft_bzero(void *p, size_t n)
+void	test_sprintf(void)
 {
-	size_t	i;
+	char	buffer[128];
 
-	i = 0;
-	while (n - i >= 8)
-	{
-		*((uint64_t *)(p + i)) = 0;
-		i += 8;
-	}
-	while (i < n)
-	{
-		*((char *)p + i) = 0;
-		i++;
-	}
+	ft_sprintf(buffer, "Hello %d world!", 3);
+	printf("%s\n", buffer);
 }

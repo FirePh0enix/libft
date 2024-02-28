@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/08 00:35:05 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:02:14 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char		*ft_strdup(const char *s);
 int			ft_atoi(const char *s);
 
 void		*ft_calloc(size_t n, size_t size);
-void		*ft_realloc(void *p, size_t size);
+void		*ft_realloc(void *p, size_t old_size, size_t size);
 
 char		*ft_substr(const char *s, unsigned int start, size_t len);
 char		*ft_strtrim(const char *s1, const char *set);
