@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2024/02/28 13:17:12 by ledelbec         ###   ########.fr        #
+#    Updated: 2024/03/15 15:30:58 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SOURCES=\
 	ft_tolower.c \
 	ft_strnstr.c \
 	ft_strncmp.c \
+	ft_strcmp.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_strchr.c \
