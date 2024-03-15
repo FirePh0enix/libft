@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:51:08 by ledelbec          #+#    #+#             */
-/*   Updated: 2023/11/20 11:33:31 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/03/15 00:59:00 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,19 +62,18 @@ static void	*error(char **res)
 
 char	**ft_split(const char *s, char c)
 {
-	char	**res;
-	size_t	len;
-	size_t	i;
-	size_t	k;
+	char			**res;
+	size_t			len;
+	size_t			i;
+	size_t			k;
+	const size_t	slen = ft_strlen(s);
 
-	if (!s)
-		return (NULL);
 	res = ft_calloc(sizeof(char *), (count_words(s, c) + 1));
 	if (!res)
 		return (NULL);
 	len = 0;
 	i = 0;
-	while (i < ft_strlen(s))
+	while (i < slen)
 	{
 		k = offset_until_sep(s, i, c);
 		if (k > i)
