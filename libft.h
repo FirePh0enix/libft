@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/03/27 11:41:42 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/03/28 00:01:34 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,18 @@ void		ft_putnbr_fd(int nb, int fd);
 
 int			ft_printf(const char *fmt, ...);
 int			ft_sprintf(char *buf, const char *fmt, ...);
+
+/*
+ * get_next_line
+ */
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4096
+# endif
+
+char		*realloc_str(char *src, char *buf, int old_size, int n);
+int			line_size(char *buf, int bufsize);
+char		*get_next_line(int fd);
 
 /*
  * C++ like vector library.
