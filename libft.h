@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/28 13:02:14 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:41:42 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,10 @@ size_t		ft_vector_size(void *vec);
  * Apply the function `f` on all elements of the vector.
  */
 void		ft_vector_iter(void *vec, void (*f)(void*));
+/*
+ * Create a new vector from an existing array of string.
+ */
+char		**ft_vector_from_array(char *array[], size_t count);
 
 t_vecdata	*ft_vector_data(void *vec);
 
