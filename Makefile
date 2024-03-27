@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2024/03/15 15:30:58 by ledelbec         ###   ########.fr        #
+#    Updated: 2024/03/28 00:19:24 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,9 @@ SOURCES=\
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
+	\
+	get_next_line.c \
+	get_next_line_utils.c \
 	\
 	ft_vector.c \
 	ft_vector_utils.c \
