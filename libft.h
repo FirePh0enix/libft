@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/03/28 00:01:34 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/03/28 13:04:19 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,12 +95,19 @@ void		*ft_vector(size_t el_size, size_t capacity);
  */
 void		ft_vector_free(void *vec);
 /*
+ * Like `ft_vector_free` but it will also free each elements of the vector
+ * assuming the vector is storing pointers.
+ */
+void		ft_vector_deep_free(void *vec);
+/*
  * Add an element at the end of the vector. `elp` is the address of the element
  * to add.
  * `vec` is the address of the vector and not the vector itself, same for all
  * add*, del* functions.
+ * The function returns the new address of the vector data or `NULL` if the
+ * reallocation failed.
  */
-void		ft_vector_add(void *vec, void *elp);
+void		*ft_vector_add(void *vec, void *elp);
 /*
  * Delete the element at `index`. After deletion the order of the remaining
  * elements is preserved.

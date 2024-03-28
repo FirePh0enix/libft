@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 22:57:13 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/16 12:38:55 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/03/28 13:06:01 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_vector(size_t el_size, size_t capacity)
 	return (data + 1);
 }
 
-void	ft_vector_add(void *_vec, void *elp)
+void	*ft_vector_add(void *_vec, void *elp)
 {
 	t_vecdata	*vec_data;
 	void		**vec;
@@ -34,14 +34,18 @@ void	ft_vector_add(void *_vec, void *elp)
 	{
 		if (vec_data->capacity == 0)
 			vec_data->capacity = 1;
-		vec_data = realloc(vec_data, sizeof(t_vecdata)
+		vec_data = ft_realloc(vec_data, sizeof(t_vecdata)
+				+ vec_data->capacity * vec_data->el_size, sizeof(t_vecdata)
 				+ vec_data->capacity * 2 * vec_data->el_size);
+		if (!vec_data)
+			return (NULL);
 		vec_data->capacity *= 2;
 		*vec = ((void *)vec_data) + sizeof(t_vecdata);
 	}
 	ft_memcpy(*vec + vec_data->size * vec_data->el_size, elp,
 		vec_data->el_size);
 	vec_data->size++;
+	return (vec_data + sizeof(t_vecdata));
 }
 
 void	ft_vector_del(void *_vec, size_t index)

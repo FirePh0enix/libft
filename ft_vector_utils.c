@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 23:23:51 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/03/27 11:41:01 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/03/28 12:57:13 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ char	**ft_vector_from_array(char *array[], size_t count)
 	size_t	i;
 
 	vec = ft_vector(sizeof(char *), count);
+	if (!vec)
+		return (NULL);
 	i = 0;
 	while (i < count)
 		ft_vector_add(&vec, &array[i++]);
