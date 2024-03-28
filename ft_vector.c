@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 22:57:13 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/03/28 13:06:01 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/03/28 15:12:29 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ void	*ft_vector_add(void *_vec, void *elp)
 	{
 		if (vec_data->capacity == 0)
 			vec_data->capacity = 1;
-		vec_data = ft_realloc(vec_data, sizeof(t_vecdata)
-				+ vec_data->capacity * vec_data->el_size, sizeof(t_vecdata)
+		// FIXME
+		vec_data = realloc(vec_data/*, sizeof(t_vecdata)
+				+ vec_data->capacity * vec_data->el_size*/, sizeof(t_vecdata)
 				+ vec_data->capacity * 2 * vec_data->el_size);
 		if (!vec_data)
 			return (NULL);
