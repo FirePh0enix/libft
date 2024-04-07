@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/03/28 13:04:19 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/07 16:47:21 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,10 @@ void		*ft_vector(size_t el_size, size_t capacity);
  * Free the memory used by the vector. `vec` should be the vector itself.
  */
 void		ft_vector_free(void *vec);
+/*
+ * Reset the size of the vector but does not free anything.
+ */
+void		ft_vector_clear(void *vec);
 /*
  * Like `ft_vector_free` but it will also free each elements of the vector
  * assuming the vector is storing pointers.

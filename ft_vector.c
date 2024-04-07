@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 22:57:13 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/03/28 15:12:29 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/07 16:47:41 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,14 @@ void	ft_vector_del_swap(void *_vec, size_t index)
 		*vec + (vec_data->size - 1) * vec_data->el_size,
 		vec_data->el_size);
 	vec_data->size--;
+}
+
+void	ft_vector_clear(void *vec)
+{
+	t_vecdata	*vec_data;
+
+	if (!vec)
+		return ;
+	vec_data = (void *)(vec - sizeof(t_vecdata));
+	vec_data->size = 0;
 }
