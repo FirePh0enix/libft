@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:30:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/28 13:40:13 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:24:36 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_writer
 {
 	t_write	write;
 	void	*p;
+	int		fd;
 }	t_writer;
 
 int		write_int(t_fmt *fmt, int64_t i, t_writer *writer);

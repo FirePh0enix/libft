@@ -6,18 +6,32 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 01:10:07 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/28 14:21:47 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:28:17 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include "printf_int.h"
+#include <stdarg.h>
 #include <unistd.h>
 
 static int	_printf_write(t_writer *w, const char *s, int len)
 {
 	(void) w;
-	return (write(1, s, len));
+	return (write(w->fd, s, len));
+}
+
+int	ft_fprintf(int fd, const char *fmt, ...)
+{
+	int			n;
+	va_list		list;
+	t_writer	writer;
+
+	va_start(list, fmt);
+	writer = (t_writer){_printf_write, NULL, fd};
+	n = format(fmt, list, &writer);
+	va_end(list);
+	return (n);
 }
 
 int	ft_printf(const char *fmt, ...)
@@ -27,7 +41,7 @@ int	ft_printf(const char *fmt, ...)
 	t_writer	writer;
 
 	va_start(list, fmt);
-	writer = (t_writer){_printf_write, NULL};
+	writer = (t_writer){_printf_write, NULL, 1};
 	n = format(fmt, list, &writer);
 	va_end(list);
 	return (n);

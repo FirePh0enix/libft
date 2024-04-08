@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/04/07 16:47:21 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:25:11 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void		ft_putnbr_fd(int nb, int fd);
 
 int			ft_printf(const char *fmt, ...);
 int			ft_sprintf(char *buf, const char *fmt, ...);
+int			ft_fprintf(int fd, const char *fmt, ...);
 
 /*
  * get_next_line
