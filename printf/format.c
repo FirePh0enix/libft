@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:23:52 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/02/28 13:44:56 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/09 15:00:06 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ int	handle_str(va_list list, const char **fmt, t_writer *w)
 	{
 		*fmt += 1;
 		str = va_arg(list, char *);
-		return (w->write(w, str, ft_strlen(str)));
+		if (str)
+			return (w->write(w, str, ft_strlen(str)));
+		return (w->write(w, "(null)", 6));
 	}
 	return (0);
 }
