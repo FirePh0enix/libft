@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/04/07 16:47:21 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:15:59 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,5 +133,24 @@ void		ft_vector_iter(void *vec, void (*f)(void*));
 char		**ft_vector_from_array(char *array[], size_t count);
 
 t_vecdata	*ft_vector_data(void *vec);
+
+/*
+ * String manipulation
+ */
+
+typedef struct s_str
+{
+	char	*data;
+	size_t	size;
+	size_t	capacity;
+}	t_str;
+
+t_str	str(char *s);
+void	*str_append(t_str *str, char *s);
+void	*str_append_n(t_str *str, char *s, size_t n);
+char	str_at(t_str *str, size_t index);
+void	str_free(t_str *str);
+
+t_str	str_null();
 
 #endif

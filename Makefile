@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2024/03/28 13:08:17 by ledelbec         ###   ########.fr        #
+#    Updated: 2024/04/09 12:15:39 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,9 @@ SOURCES=\
 	ft_vector.c \
 	ft_vector_utils.c \
 	ft_vector_free.c \
+	\
+	string.c \
+	string_utils.c \
 	\
 	printf/printf.c \
 	printf/format.c \
