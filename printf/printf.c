@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 01:10:07 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/04/08 22:28:17 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/09 14:44:46 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_sprintf(char *buf, const char *fmt, ...)
 	t_writer	writer;
 
 	va_start(list, fmt);
-	writer = (t_writer){_sprintf_write, buf};
+	writer = (t_writer){_sprintf_write, buf, -1};
 	n = format(fmt, list, &writer);
 	((char *) writer.p)[0] = '\0';
 	va_end(list);
