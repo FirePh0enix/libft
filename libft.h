@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/04/09 14:40:40 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:58:30 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int			ft_isascii(int c);
 int			ft_isprint(int c);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
+int			ft_isspace(int c);
 
 void		*ft_memset(void *p, int c, size_t n);
 void		ft_bzero(void *p, size_t n);
@@ -146,12 +147,12 @@ typedef struct s_str
 	size_t	capacity;
 }	t_str;
 
-t_str	str(char *s);
-void	*str_append(t_str *str, char *s);
-void	*str_append_n(t_str *str, char *s, size_t n);
-char	str_at(t_str *str, size_t index);
-void	str_free(t_str *str);
+t_str		str(char *s);
+void		*str_append(t_str *str, char *s);
+void		*str_append_n(t_str *str, char *s, size_t n);
+char		str_at(t_str *str, size_t index);
+void		str_free(t_str *str);
 
-t_str	str_null();
+t_str		str_null(void);
 
 #endif

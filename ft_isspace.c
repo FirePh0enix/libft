@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 22:34:16 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/04/19 13:59:20 by ledelbec         ###   ########.fr       */
+/*   Created: 2024/04/19 13:56:00 by ledelbec          #+#    #+#             */
+/*   Updated: 2024/04/19 13:56:46 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stddef.h>
-#include <stdlib.h>
-
-void	*ft_realloc(void *p, size_t on, size_t n)
+int	ft_isspace(int c)
 {
-	void	*np;
-
-	np = malloc(n);
-	if (!np)
-		return (NULL);
-	if (p)
-	{
-		ft_memcpy(np, p, on);
-		free(p);
-	}
-	return (np);
+	return (c == ' ' || c == '\t' || c == '\r' || c == '\b' || c == '\v'
+		|| c == '\n');
 }

@@ -6,13 +6,13 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:14:47 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/04/09 12:15:18 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:59:46 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_str	str_null()
+t_str	str_null(void)
 {
 	return ((t_str){NULL, 0, 0});
 }

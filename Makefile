@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2024/04/09 12:15:39 by ledelbec         ###   ########.fr        #
+#    Updated: 2024/04/19 13:57:04 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SOURCES=\
 	ft_isdigit.c \
 	ft_isprint.c \
 	ft_isalnum.c \
+	ft_isspace.c \
 	ft_memcpy.c \
 	ft_memmove.c \
 	ft_memset.c \
