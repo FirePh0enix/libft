@@ -6,7 +6,7 @@
 #    By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:54:05 by ledelbec          #+#    #+#              #
-#    Updated: 2024/04/19 13:57:04 by ledelbec         ###   ########.fr        #
+#    Updated: 2024/04/19 14:03:28 by ledelbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SOURCES=\
 	ft_strlcpy.c \
 	ft_strlcat.c \
 	ft_strdup.c \
+	ft_strndup.c \
 	ft_strtrim.c \
 	ft_substr.c \
 	ft_strjoin.c \

@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/04/19 13:58:30 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:03:59 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ char		*ft_strnstr(const char *big, const char *little, size_t n);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
 char		*ft_strdup(const char *s);
+char		*ft_strndup(const char *s, size_t n);
 
 int			ft_atoi(const char *s);
 
