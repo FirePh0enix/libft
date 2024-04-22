@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 21:48:37 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/04/19 14:03:59 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:24:13 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
+char		*ft_strstr(char *str, char *to_find);
 char		*ft_strnstr(const char *big, const char *little, size_t n);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
