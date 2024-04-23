@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 23:23:51 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/03/28 12:57:13 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:29:24 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 size_t	ft_vector_size(void *vec)
 {
+	if (!vec)
+		return (0);
 	return (((t_vecdata *)(vec - sizeof(t_vecdata)))->size);
 }
 
 void	ft_vector_free(void *vec)
 {
+	if (!vec)
+		return ;
 	free(vec - sizeof(t_vecdata));
 }
 

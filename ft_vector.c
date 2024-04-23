@@ -6,7 +6,7 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 22:57:13 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/04/20 15:34:09 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:28:04 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	*ft_vector_add(void *_vec, void *elp)
 	t_vecdata	*vec_data;
 	void		**vec;
 
+	if (!_vec)
+		return (NULL);
 	vec = _vec;
 	vec_data = (void *)(*vec - sizeof(t_vecdata));
 	if (vec_data->size == vec_data->capacity)
