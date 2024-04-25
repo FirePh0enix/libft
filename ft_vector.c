@@ -6,11 +6,12 @@
 /*   By: ledelbec <ledelbec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 22:57:13 by ledelbec          #+#    #+#             */
-/*   Updated: 2024/04/23 15:28:04 by ledelbec         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:23:14 by ledelbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_vector(size_t el_size, size_t capacity)
 {
@@ -61,9 +62,16 @@ void	ft_vector_del(void *_vec, size_t index)
 
 	vec = _vec;
 	vec_data = (void *)(*vec - sizeof(t_vecdata));
-	ft_memcpy(*vec + index * vec_data->el_size,
-		*vec + (index + 1) * vec_data->el_size,
-		(vec_data->size - index) * vec_data->el_size);
+	if (index + 1 < vec_data->size)
+	{
+		ft_memcpy(*vec + index * vec_data->el_size,
+			*vec + (index + 1) * vec_data->el_size,
+			(vec_data->size - index - 1) * vec_data->el_size);
+	}
+	else
+	{
+		ft_memset(*vec + index * vec_data->el_size, 0, vec_data->el_size);
+	}
 	vec_data->size--;
 }
 
